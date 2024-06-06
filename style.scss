@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  display: grid;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  border-style: dashed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+nav li {
+  float: left;
+  width: 100%;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: grey;
+}
+
+.active {
+  background-color: red;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
