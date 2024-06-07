@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  font-size: 18px;
   background-color: #f4f4f4;
   color: #333;
   height: 100%;
@@ -88,23 +90,50 @@ nav ul li a:hover {
 }
 
 .content {
-  padding: 50px 20px;
+  padding: 15px 10px;
   background: #e2e2e2;
   margin-bottom: 20px;
 }
 
-.flex-content {
+.flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
-.left {
+.flex-column {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+form {
+  margin-left: 20%;
+}
+
+form input {
+  width: 80%;
+  font-size: 18px;
+  padding: 2px;
+  margin: 4px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+}
+
+#description {
+  height: 80px;
 }
 
 #chart {
   width: 90%;
+  border-style: solid;
+  margin-left: 10%;
+}
+
+.list {
+  border-bottom: solid 2px;
+  padding-bottom: 5px;
 }
 
 footer {
