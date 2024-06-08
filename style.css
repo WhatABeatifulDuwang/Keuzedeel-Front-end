@@ -15,6 +15,21 @@ body {
   font-family: Arial, sans-serif;
   font-size: 18px;
 }
+@media (min-width: 391px) and (max-width: 1024px) {
+  body {
+    font-size: 30px;
+  }
+}
+@media (min-width: 0) and (max-width: 390px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (min-height: 0) and (max-height: 390px) {
+  body {
+    font-size: 16px;
+  }
+}
 
 header {
   padding: 10px 0;
@@ -27,28 +42,124 @@ header {
 header h1 {
   margin: 0;
 }
+@media (min-width: 0) and (max-width: 390px) {
+  header h1 {
+    text-align: left;
+    font-size: 30px;
+  }
+}
 
-nav ul {
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  width: 60px;
+  height: 60px;
+  top: 25px;
+  right: 25px;
+  position: absolute;
+  background-color: grey;
+  border-style: 2px solid #fff;
+  border-radius: 4px;
+}
+.menu-icon img {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  .menu-icon {
+    width: 100px;
+    height: 100px;
+    top: 30px;
+    right: 30px;
+  }
+}
+@media (min-height: 0) and (max-height: 390px) {
+  .menu-icon {
+    width: 60px;
+    height: 60px;
+    top: 25px;
+    right: 25px;
+  }
+}
+
+.menu {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  background: #f4f4f4;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  width: 200px;
+  border: 2px solid #fff;
 }
-nav ul li {
-  display: inline;
-  margin: 0 10px;
+@media (min-width: 391px) and (max-width: 1024px) {
+  .menu {
+    width: 400px;
+  }
 }
-nav ul li a {
-  color: #fff;
+@media (min-width: 1025px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: static;
+    background: none;
+    width: auto;
+    border: none;
+  }
+}
+.menu li {
+  border-bottom: 2px solid #fff;
+}
+@media (min-width: 1025px) {
+  .menu li {
+    border: none;
+  }
+}
+.menu li a {
   text-decoration: none;
+  color: #fff;
+  padding: 15px;
+  display: block;
 }
-nav ul li a:hover {
-  background-color: grey;
+@media (min-width: 0) and (max-width: 390px) {
+  .menu li a {
+    color: #333;
+  }
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  .menu li a {
+    color: #333;
+  }
 }
 
+@media (min-width: 0) and (max-width: 390px) {
+  .menu-icon, #menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  .menu-icon, #menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+}
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 50px;
-  margin: 30px 0;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+@media (min-width: 0) and (max-width: 390px) {
+  .grid-container {
+    gap: 10px;
+    margin: 30px;
+  }
 }
 
 #grid-title {
@@ -96,15 +207,49 @@ nav ul li a:hover {
   flex-direction: row;
   justify-content: space-between;
 }
+@media (min-width: 0) and (max-width: 390px) {
+  .flex-row {
+    flex-direction: column;
+  }
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  .flex-row {
+    flex-direction: column;
+  }
+}
 
 .flex-column {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
+@media (min-width: 391px) and (max-width: 1024px) {
+  .flex-column {
+    margin-bottom: 40px;
+  }
+  .flex-column img {
+    height: 40px;
+    width: 40px;
+  }
+}
+@media (min-width: 0) and (max-width: 390px) {
+  .flex-column {
+    margin-bottom: 20px;
+  }
+}
 
 form {
   margin-left: 20%;
+}
+@media (min-width: 0) and (max-width: 390px) {
+  form {
+    margin: 0;
+  }
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  form {
+    margin: 0;
+  }
 }
 form input {
   width: 80%;
@@ -113,6 +258,18 @@ form input {
   margin: 4px;
   border-style: 2px solid #fff;
   border-radius: 4px;
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  form input {
+    width: 95%;
+    font-size: 30px;
+  }
+}
+@media (min-width: 0) and (max-width: 390px) {
+  form input {
+    width: 95%;
+    font-size: 16px;
+  }
 }
 
 #description {
@@ -123,6 +280,18 @@ form input {
   width: 90%;
   border-style: solid;
   margin-left: 10%;
+}
+@media (min-width: 391px) and (max-width: 1024px) {
+  #chart {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media (min-width: 0) and (max-width: 390px) {
+  #chart {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .list {
