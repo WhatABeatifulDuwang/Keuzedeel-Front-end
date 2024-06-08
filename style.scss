@@ -1,51 +1,88 @@
+$black: #333;
+$white: #fff;
+$body-background-color: #f4f4f4;
+$body-background-image: url("imgs/code.jpg");
+$body-text-color: #333;
+$base-margin: 0;
+$base-padding: 0;
+$main-font-family: Arial, sans-serif;
+$main-font-size: 18px;
+$border-color: #fff;
+$main-border: 2px solid $border-color;
+$round-border: 4px;
+$center-text: center;
+$max-height: 100%;
+$max-width: 100%;
+
+@mixin topdown {
+  background-color: $black;
+  color: $white;
+}
+
+@mixin main-colors {
+  background-color: $white;
+  color: $black;
+}
+
+@mixin main-font {
+  font-family: $main-font-family;
+  font-size: $main-font-size;
+}
+
+@mixin main-round-border {
+  border-style: $main-border;
+  border-radius: $round-border;
+}
+
+@mixin body-markup {
+  background-color: $body-background-color;
+  background-image: $body-background-image;
+  color: $body-text-color;
+  @include main-font
+}
+
 * {
-  margin: 0;
-  padding: 0;
+  margin: $base-margin;
+  padding: $base-padding;
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
 body {
-  font-family: Arial, sans-serif;
   line-height: 1.6;
-  font-size: 18px;
-  background-color: #f4f4f4;
-  color: #333;
-  height: 100%;
+  height: $max-height;
   padding: 20px;
-  background-image: url("imgs/code.jpg");
+  @include body-markup
 }
 
 header {
-  background: #333;
-  color: #fff;
   padding: 10px 0;
-  border: 1px solid #ddd;
+  border: $main-border;
   border-radius: 4px 4px 0 0;
-  text-align: center;
-}
+  text-align: $center-text;
+  @include topdown;
 
-header h1 {
-  margin: 0;
+  h1 {
+    margin: $base-margin;
+  }
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
-}
+  padding: $base-padding;
 
-nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
+  li {
+    display: inline;
+    margin: 0 10px;
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  background-color: grey;
+    a {
+      color: $white;
+      text-decoration: none;
+      &:hover {
+        background-color: grey;
+      }
+    }
+  }
 }
 
 .grid-container {
@@ -56,42 +93,38 @@ nav ul li a:hover {
 }
 
 #grid-title {
-  background: #333;
-  color: #fff;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 100%;
+  width: $max-width;
   text-align: center;
+  @include main-round-border;
+  @include topdown;
 }
 
 .grid-item {
   background: #fff;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  text-align: center;
+  text-align: $center-text;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @include main-round-border;
 }
 
 .intro {
-  text-align: center;
+  text-align: $center-text;
   padding: 50px 20px;
-  background: #e2e2e2;
+  background: $body-background-color;
   margin-bottom: 20px;
 }
 
 .intro-button {
-  background: #333;
-  color: #fff;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: $round-border;
+  @include topdown;
 }
 
 .content {
   padding: 15px 10px;
-  background: #e2e2e2;
+  background: $body-background-color;
   margin-bottom: 20px;
 }
 
@@ -109,16 +142,14 @@ nav ul li a:hover {
 
 form {
   margin-left: 20%;
-}
 
-form input {
-  width: 80%;
-  font-size: 18px;
-  padding: 2px;
-  margin: 4px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 4px;
+  input {
+    width: 80%;
+    font-size: $main-font-size;
+    padding: 2px;
+    margin: 4px;
+    @include main-round-border;
+  }
 }
 
 #description {
@@ -137,13 +168,12 @@ form input {
 }
 
 footer {
-  text-align: center;
   margin-top: 20px;
   padding: 10px 0;
-  background: #333;
-  color: #fff;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: $max-width;
   position: fixed;
+  text-align: $center-text;
+  @include topdown;
 }
