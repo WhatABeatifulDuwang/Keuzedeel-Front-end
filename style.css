@@ -154,6 +154,7 @@ header h1 {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 @media (min-width: 0) and (max-width: 391px) {
   .grid-container {
@@ -238,17 +239,20 @@ header h1 {
   .flex-column img {
     height: 100%;
   }
+  .flex-column article {
+    margin-bottom: 20px;
+  }
 }
 @media (min-width: 0) and (max-width: 391px) {
   .flex-column {
     margin-bottom: 20px;
     width: 100%;
   }
+  .flex-column article {
+    margin-bottom: 20px;
+  }
 }
 
-form {
-  margin-left: 20%;
-}
 @media (min-width: 0) and (max-width: 391px) {
   form {
     margin: 0;

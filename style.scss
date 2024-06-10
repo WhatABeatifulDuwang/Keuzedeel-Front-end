@@ -29,10 +29,10 @@ $max-width: 100%;
 @mixin main-font {
   font-family: $main-font-family;
   font-size: $main-font-size;
-  @include device(tablet){
+  @include device(tablet) {
     font-size: $tablet-font-size;
   }
-  @include device(phone){
+  @include device(phone) {
     font-size: $phone-font-size;
   }
   @include device(phone-landscape) {
@@ -135,7 +135,7 @@ header {
     top: 30px;
     right: 30px;
   }
-  @include device(phone-landscape){
+  @include device(phone-landscape) {
     width: 60px;
     height: 60px;
     top: 25px;
@@ -208,6 +208,7 @@ header {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 20px;
+  margin-bottom: 30px;
   @include device(phone) {
     gap: 10px;
     margin: 30px;
@@ -279,16 +280,22 @@ header {
     img {
       height: $max-height;
     }
+
+    article {
+      margin-bottom: 20px;
+    }
   }
   @include device(phone) {
     margin-bottom: 20px;
     width: $max-width;
+
+    article {
+      margin-bottom: 20px;
+    }
   }
 }
 
 form {
-  margin-left: 20%;
-
   @include device(phone) {
     margin: $base-margin;
   }
