@@ -54,7 +54,7 @@ $max-width: 100%;
 
 @mixin device($type) {
   @if ($type == phone) {
-    @media (min-width: 0) and (max-width: 390px) {
+    @media (min-width: 0) and (max-width: 391px) {
       @content;
     }
   }
@@ -70,6 +70,11 @@ $max-width: 100%;
   }
   @if ($type == laptop) {
     @media (min-width: 1025px) {
+      @content;
+    }
+  }
+  @if ($type == desktop) {
+    @media (min-width: 1500px) {
       @content;
     }
   }
@@ -192,7 +197,7 @@ header {
   }
 }
 
-@include device(tablet){
+@include device(tablet) {
   .menu-icon, #menu-toggle:checked ~ .menu {
     display: flex;
   }
@@ -203,9 +208,13 @@ header {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 20px;
-  @include device(phone){
+  @include device(phone) {
     gap: 10px;
     margin: 30px;
+  }
+  @include device(laptop) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 5px;
   }
 }
 
@@ -219,7 +228,7 @@ header {
 
 .grid-item {
   background: $white;
-  padding: 10px;
+  padding: 15px;
   text-align: $center-text;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   @include main-round-border;
@@ -262,16 +271,18 @@ header {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: $max-width / 2;
 
   @include device(tablet) {
     margin-bottom: 40px;
+    width: $max-width;
     img {
-      height: 40px;
-      width: 40px;
+      height: $max-height;
     }
   }
   @include device(phone) {
     margin-bottom: 20px;
+    width: $max-width;
   }
 }
 
@@ -322,9 +333,22 @@ form {
   }
 }
 
-.list {
+table {
+  text-align: left;
+
+  th {
+    font-weight: normal;
+  }
+}
+
+.workEducation {
+  @extend table;
   border-bottom: solid 2px;
   padding-bottom: 5px;
+}
+
+.socials {
+  width: 30%;
 }
 
 footer {

@@ -20,7 +20,7 @@ body {
     font-size: 30px;
   }
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   body {
     font-size: 16px;
   }
@@ -42,7 +42,7 @@ header {
 header h1 {
   margin: 0;
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   header h1 {
     text-align: left;
     font-size: 30px;
@@ -128,7 +128,7 @@ header h1 {
   padding: 15px;
   display: block;
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   .menu li a {
     color: #333;
   }
@@ -139,7 +139,7 @@ header h1 {
   }
 }
 
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   .menu-icon, #menu-toggle:checked ~ .menu {
     display: flex;
   }
@@ -155,10 +155,16 @@ header h1 {
   gap: 30px;
   margin-top: 20px;
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   .grid-container {
     gap: 10px;
     margin: 30px;
+  }
+}
+@media (min-width: 1025px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 5px;
   }
 }
 
@@ -174,7 +180,7 @@ header h1 {
 
 .grid-item {
   background: #fff;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-style: 2px solid #fff;
@@ -207,7 +213,7 @@ header h1 {
   flex-direction: row;
   justify-content: space-between;
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   .flex-row {
     flex-direction: column;
   }
@@ -222,26 +228,28 @@ header h1 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: 50%;
 }
 @media (min-width: 391px) and (max-width: 1024px) {
   .flex-column {
     margin-bottom: 40px;
+    width: 100%;
   }
   .flex-column img {
-    height: 40px;
-    width: 40px;
+    height: 100%;
   }
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   .flex-column {
     margin-bottom: 20px;
+    width: 100%;
   }
 }
 
 form {
   margin-left: 20%;
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   form {
     margin: 0;
   }
@@ -265,7 +273,7 @@ form input {
     font-size: 30px;
   }
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   form input {
     width: 95%;
     font-size: 16px;
@@ -287,16 +295,27 @@ form input {
     margin-left: 0;
   }
 }
-@media (min-width: 0) and (max-width: 390px) {
+@media (min-width: 0) and (max-width: 391px) {
   #chart {
     width: 100%;
     margin-left: 0;
   }
 }
 
-.list {
+table, .workEducation {
+  text-align: left;
+}
+table th, .workEducation th {
+  font-weight: normal;
+}
+
+.workEducation {
   border-bottom: solid 2px;
   padding-bottom: 5px;
+}
+
+.socials {
+  width: 30%;
 }
 
 footer {
