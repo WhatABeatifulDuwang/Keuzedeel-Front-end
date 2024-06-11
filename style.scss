@@ -1,7 +1,8 @@
+// Instance variables
 $black: #333;
 $white: #fff;
 $body-background-color: #f4f4f4;
-$body-background-image: url("imgs/code.jpg");
+$body-background-image: url("imgs/code.avif");
 $body-text-color: $black;
 $base-margin: 0;
 $base-padding: 0;
@@ -16,16 +17,19 @@ $center-text: center;
 $max-height: 100%;
 $max-width: 100%;
 
+// Website header and footer colors
 @mixin topdown {
   background-color: $black;
   color: $white;
 }
 
+// Website main colors
 @mixin main-colors {
   background-color: $white;
   color: $black;
 }
 
+// Font styling
 @mixin main-font {
   font-family: $main-font-family;
   font-size: $main-font-size;
@@ -40,39 +44,49 @@ $max-width: 100%;
   }
 }
 
+// Border styling
 @mixin main-round-border {
   border-style: $main-border;
   border-radius: $round-border;
 }
 
+// Body styling
 @mixin body-markup {
   background-color: $body-background-color;
   background-image: $body-background-image;
   color: $body-text-color;
+  line-height: 1.6;
+  height: $max-height;
+  padding: 20px;
   @include main-font
 }
 
+// iPhone 12 Pro Portrait measurements
 @mixin device($type) {
   @if ($type == phone) {
     @media (min-width: 0) and (max-width: 391px) {
       @content;
     }
   }
+  // iPhone 12 Pro Landscape measurements
   @if ($type == phone-landscape) {
-    @media (min-height: 0) and (max-height: 390px){
+    @media (min-height: 0) and (max-height: 391px){
       @content;
     }
   }
+  // iPad Pro measurements
   @if ($type == tablet) {
     @media (min-width: 391px) and (max-width: 1024px) {
       @content;
     }
   }
+  // ASUS TUF GAMING A15 measurements
   @if ($type == laptop) {
     @media (min-width: 1025px) {
       @content;
     }
   }
+  // Bigger desktop measurements
   @if ($type == desktop) {
     @media (min-width: 1500px) {
       @content;
@@ -80,6 +94,7 @@ $max-width: 100%;
   }
 }
 
+// General styling
 * {
   margin: $base-margin;
   padding: $base-padding;
@@ -87,13 +102,12 @@ $max-width: 100%;
   overflow-x: hidden;
 }
 
+// Body styling
 body {
-  line-height: 1.6;
-  height: $max-height;
-  padding: 20px;
   @include body-markup
 }
 
+// Header styling
 header {
   padding: 10px 0;
   border: $main-border;
@@ -110,16 +124,21 @@ header {
   }
 }
 
+.introduction-text {
+  font-weight: bold;
+}
+
+// Nav styling
 #menu-toggle {
   display: none;
 }
 
 .menu-icon {
   display: none;
-  width: 60px;
-  height: 60px;
-  top: 25px;
-  right: 25px;
+  width: 15%;
+  height: 7.5%;
+  top: 3%;
+  right: 6%;
   position: absolute;
   background-color: grey;
   @include main-round-border;
@@ -130,16 +149,16 @@ header {
   }
 
   @include device(tablet) {
-    width: 100px;
-    height: 100px;
-    top: 30px;
-    right: 30px;
+    width: 10%;
+    height: 7.5%;
+    top: 2%;
+    right: 2.5%;
   }
   @include device(phone-landscape) {
-    width: 60px;
-    height: 60px;
-    top: 25px;
-    right: 25px;
+    width: 15%;
+    height: 15%;
+    top: 7%;
+    right: 3%;
   }
 }
 
@@ -203,6 +222,7 @@ header {
   }
 }
 
+// Grid styling
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -255,6 +275,7 @@ header {
   margin-bottom: 20px;
 }
 
+// Flexbox styling
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -295,6 +316,7 @@ header {
   }
 }
 
+// Form styling
 form {
   @include device(phone) {
     margin: $base-margin;
@@ -340,6 +362,7 @@ form {
   }
 }
 
+// Table styling
 table {
   text-align: left;
 
@@ -358,6 +381,7 @@ table {
   width: 30%;
 }
 
+// Footer styling
 footer {
   margin-top: 20px;
   padding: 10px 0;
